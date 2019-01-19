@@ -117,6 +117,8 @@
 		59D1E6261D1865AC00896A4C /* DashboardVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1E6241D1865AC00896A4C /* DashboardVideoCell.swift */; };
 		59D1E6581D1866F800896A4C /* DashboardVideoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1E6571D1866F800896A4C /* DashboardVideoCellViewModel.swift */; };
 		59E877381DC9419700BCD1F7 /* Newsletter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E877371DC9419700BCD1F7 /* Newsletter.swift */; };
+		6A5427D121F3C58000A6EA98 /* Retentioneering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5427C821F3C3F800A6EA98 /* Retentioneering.framework */; };
+		6A5427D221F3C58000A6EA98 /* Retentioneering.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5427C821F3C3F800A6EA98 /* Retentioneering.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		770DF32A2106210900A6D0F1 /* SettingsNotificationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770DF3292106210900A6D0F1 /* SettingsNotificationsDataSource.swift */; };
 		770E441321137E7400396D46 /* SettingsNotificationPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E441221137E7400396D46 /* SettingsNotificationPickerCell.swift */; };
 		770E441521137F3700396D46 /* SettingsNotificationPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 770E441421137F3700396D46 /* SettingsNotificationPickerCell.xib */; };
@@ -1079,6 +1081,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6A5427C721F3C3F800A6EA98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A54279121F3C3F800A6EA98 /* Retentioneering.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6A84E5D821F387CD0052A137;
+			remoteInfo = Retentioneering;
+		};
+		6A5427C921F3C3F800A6EA98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A54279121F3C3F800A6EA98 /* Retentioneering.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6AB8943E21F3B2EF0023DF49;
+			remoteInfo = RetentioneeringTests;
+		};
+		6A5427D321F3C58000A6EA98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A54279121F3C3F800A6EA98 /* Retentioneering.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A84E5D721F387CD0052A137;
+			remoteInfo = Retentioneering;
+		};
 		80388E201F21429100B2EE88 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A7E06C711C5A6EB300EBDCC2 /* Project object */;
@@ -1736,6 +1759,7 @@
 				D0B45B6C1EF858C00020A8DA /* KsApi.framework in Embed Frameworks */,
 				D0B45B701EF858DE0020A8DA /* Prelude_UIKit.framework in Embed Frameworks */,
 				A7BA543F1E1E493600E54377 /* LiveStream.framework in Embed Frameworks */,
+				6A5427D221F3C58000A6EA98 /* Retentioneering.framework in Embed Frameworks */,
 				D01BEA0D1F0259AC0064C1D9 /* Runes.framework in Embed Frameworks */,
 				80762E3F1D071CAA0074189D /* Alamofire.framework in Embed Frameworks */,
 				D01BEA091F0259A30064C1D9 /* Result.framework in Embed Frameworks */,
@@ -1856,6 +1880,7 @@
 		59D1E6241D1865AC00896A4C /* DashboardVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVideoCell.swift; sourceTree = "<group>"; };
 		59D1E6571D1866F800896A4C /* DashboardVideoCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVideoCellViewModel.swift; sourceTree = "<group>"; };
 		59E877371DC9419700BCD1F7 /* Newsletter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Newsletter.swift; sourceTree = "<group>"; };
+		6A54279121F3C3F800A6EA98 /* Retentioneering.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Retentioneering.xcodeproj; path = Frameworks/Retentioneering/Retentioneering/Retentioneering.xcodeproj; sourceTree = "<group>"; };
 		770DF3292106210900A6D0F1 /* SettingsNotificationsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNotificationsDataSource.swift; sourceTree = "<group>"; };
 		770E441221137E7400396D46 /* SettingsNotificationPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNotificationPickerCell.swift; sourceTree = "<group>"; };
 		770E441421137F3700396D46 /* SettingsNotificationPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsNotificationPickerCell.xib; sourceTree = "<group>"; };
@@ -2886,6 +2911,7 @@
 				776E31CF2147DE8000EFC09A /* Stripe.framework in Frameworks */,
 				A73924001D27230B004524C3 /* Kickstarter_Framework.framework in Frameworks */,
 				A7BA543E1E1E493600E54377 /* LiveStream.framework in Frameworks */,
+				6A5427D121F3C58000A6EA98 /* Retentioneering.framework in Frameworks */,
 				A7722F401D2D3B6B0049BCDC /* FBSDKCoreKit.framework in Frameworks */,
 				D0B45B6B1EF858C00020A8DA /* KsApi.framework in Frameworks */,
 				D0B45B6F1EF858DE0020A8DA /* Prelude_UIKit.framework in Frameworks */,
@@ -2953,6 +2979,15 @@
 				A731BF581D1ED60800A734AC /* WebViewController.swift */,
 			);
 			name = Library;
+			sourceTree = "<group>";
+		};
+		6A54279221F3C3F800A6EA98 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A5427C821F3C3F800A6EA98 /* Retentioneering.framework */,
+				6A5427CA21F3C3F800A6EA98 /* RetentioneeringTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		775DFADB2162A56D00620CED /* mutations */ = {
@@ -3765,6 +3800,7 @@
 		A7E06DBC1C5C027800EBDCC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A54279121F3C3F800A6EA98 /* Retentioneering.xcodeproj */,
 				80762E261D071BFE0074189D /* Alamofire.xcodeproj */,
 				80762DE71D071BCF0074189D /* AlamofireImage.xcodeproj */,
 				D04277D01EEB08D800600E9C /* Argo.xcodeproj */,
@@ -4655,6 +4691,7 @@
 				D0B45CF71EF864700020A8DA /* PBXTargetDependency */,
 				D01BEA0B1F0259A30064C1D9 /* PBXTargetDependency */,
 				D01BEA0F1F0259AC0064C1D9 /* PBXTargetDependency */,
+				6A5427D421F3C58000A6EA98 /* PBXTargetDependency */,
 			);
 			name = "Kickstarter-iOS";
 			productName = Kickstarter;
@@ -4846,6 +4883,10 @@
 					ProjectRef = D01BE9D81F02598A0064C1D9 /* Result.xcodeproj */;
 				},
 				{
+					ProductGroup = 6A54279221F3C3F800A6EA98 /* Products */;
+					ProjectRef = 6A54279121F3C3F800A6EA98 /* Retentioneering.xcodeproj */;
+				},
+				{
 					ProductGroup = D01BE9F11F02598F0064C1D9 /* Products */;
 					ProjectRef = D01BE9F01F02598F0064C1D9 /* Runes.xcodeproj */;
 				},
@@ -4866,6 +4907,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		6A5427C821F3C3F800A6EA98 /* Retentioneering.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Retentioneering.framework;
+			remoteRef = 6A5427C721F3C3F800A6EA98 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6A5427CA21F3C3F800A6EA98 /* RetentioneeringTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RetentioneeringTests.xctest;
+			remoteRef = 6A5427C921F3C3F800A6EA98 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		80762DF31D071BCF0074189D /* AlamofireImage.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -6473,6 +6528,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6A5427D421F3C58000A6EA98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Retentioneering;
+			targetProxy = 6A5427D321F3C58000A6EA98 /* PBXContainerItemProxy */;
+		};
 		80388E211F21429100B2EE88 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A7BA54281E1E493500E54377 /* LiveStream */;
@@ -6632,7 +6692,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -6666,12 +6726,14 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-D HOCKEY";
 				PRODUCT_NAME = Kickstarter;
@@ -7228,7 +7290,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -7268,12 +7330,14 @@
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-D DEBUG -Xfrontend -warn-long-function-bodies=1000";
@@ -7307,7 +7371,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -7340,12 +7404,14 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
 				PRODUCT_NAME = Kickstarter;
@@ -7539,7 +7605,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -7573,12 +7639,14 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-D HOCKEY";
 				PRODUCT_NAME = Kickstarter;

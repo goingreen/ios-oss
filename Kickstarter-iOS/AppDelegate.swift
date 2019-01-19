@@ -18,6 +18,7 @@ import Result
 import SafariServices
 import UIKit
 import UserNotifications
+import Retentioneering
 
 @UIApplicationMain
 internal final class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -51,6 +52,10 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
         AppEnvironment.replaceCurrentEnvironment(apiService: MockService())
       }
     #endif
+
+    let ret = Retentioneering()
+    let event = Event(name: "HelloFromKickstarter", screen: "AppDel")
+    ret.sendEvent(event)
 
     self.viewModel.outputs.updateCurrentUserInEnvironment
       .observeForUI()
