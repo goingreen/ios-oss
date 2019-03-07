@@ -29,6 +29,8 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
     return self.window?.rootViewController as? RootTabBarViewController
   }
 
+  var retentioneering: Retentioneering!
+
   func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -53,9 +55,17 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
       }
     #endif
 
-    let ret = Retentioneering()
+    let retConfig = Configuration(baseUrl: "https://my-team-project-217908.appspot.com",
+                                  serviceConfiguration: ServiceConfiguration())
+    retentioneering = Retentioneering(configuration: retConfig)
+
     let event = Event(name: "HelloFromKickstarter", screen: "AppDel")
-    ret.sendEvent(event)
+    retentioneering.sendEvent(event)
+    retentioneering.updateModel {
+      self.retentioneering.calculateProbability(for: .lostUser) { prob in
+        print("lost user prediction!: \(prob)")
+      }
+    }
 
     self.viewModel.outputs.updateCurrentUserInEnvironment
       .observeForUI()
