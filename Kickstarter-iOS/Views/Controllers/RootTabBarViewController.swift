@@ -3,6 +3,11 @@ import KsApi
 import Library
 import Prelude
 import UIKit
+import Retentioneering
+
+private let retConfig = Configuration(baseUrl: "https://my-team-project-217908.appspot.com",
+                                      serviceConfiguration: ServiceConfiguration())
+public let retentioneering = Retentioneering(configuration: retConfig)
 
 internal protocol TabBarControllerScrollable {
   func scrollToTop()

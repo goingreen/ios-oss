@@ -6,6 +6,7 @@ import Library
 import KsApi
 import Prelude
 import FBSDKLoginKit
+import Retentioneering
 
 internal final class LoginToutViewController: UIViewController, MFMailComposeViewControllerDelegate {
   @IBOutlet fileprivate weak var contextLabel: UILabel!
@@ -61,6 +62,7 @@ internal final class LoginToutViewController: UIViewController, MFMailComposeVie
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    retentioneering.sendEvent(Event(name: "login_screen"))
     self.viewModel.inputs.view(isPresented: self.presentingViewController != nil)
     self.viewModel.inputs.viewWillAppear()
   }
@@ -108,18 +110,21 @@ internal final class LoginToutViewController: UIViewController, MFMailComposeVie
     self.viewModel.outputs.startLogin
       .observeForControllerAction()
       .observeValues { [weak self] _ in
+        retentioneering.sendEvent(Event(name: "login_pressed"))
         self?.pushLoginViewController()
     }
 
     self.viewModel.outputs.startSignup
       .observeForControllerAction()
       .observeValues { [weak self] _ in
+        retentioneering.sendEvent(Event(name: "signup_pressed"))
         self?.pushSignupViewController()
     }
 
     self.viewModel.outputs.logIntoEnvironment
       .observeValues { [weak self] accessTokenEnv in
         AppEnvironment.login(accessTokenEnv)
+        retentioneering.sendEvent(Event(name: "logined_in"))
         self?.viewModel.inputs.environmentLoggedIn()
     }
 
@@ -143,7 +148,9 @@ internal final class LoginToutViewController: UIViewController, MFMailComposeVie
     }
 
     self.viewModel.outputs.attemptFacebookLogin
-      .observeValues { [weak self] _ in self?.attemptFacebookLogin()
+      .observeValues { [weak self] _ in
+        retentioneering.sendEvent(Event(name: "facebook_login_pressed"))
+        self?.attemptFacebookLogin()
     }
 
     self.viewModel.outputs.showFacebookErrorAlert
@@ -165,6 +172,7 @@ internal final class LoginToutViewController: UIViewController, MFMailComposeVie
     self.helpViewModel.outputs.showHelpSheet
       .observeForControllerAction()
       .observeValues { [weak self] in
+        retentioneering.sendEvent(Event(name: "help_pressed"))
         self?.showHelpSheet(helpTypes: $0)
     }
 

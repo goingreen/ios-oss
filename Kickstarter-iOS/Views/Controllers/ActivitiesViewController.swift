@@ -3,6 +3,7 @@ import Library
 import Prelude
 import ReactiveSwift
 import UIKit
+import Retentioneering
 
 internal final class ActivitiesViewController: UITableViewController {
   fileprivate let viewModel: ActivitiesViewModelType = ActivitiesViewModel()
@@ -61,6 +62,7 @@ internal final class ActivitiesViewController: UITableViewController {
   internal override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
+    retentioneering.sendEvent(Event(name: "activity_screen"))
     self.viewModel.inputs.viewWillAppear(animated: animated)
   }
 

@@ -4,6 +4,7 @@ import Library
 import PassKit
 import Prelude
 import Prelude_UIKit
+import Retentioneering
 
 public protocol ProjectPamphletContentViewControllerDelegate: VideoViewControllerDelegate {
   func projectPamphletContent(_ controller: ProjectPamphletContentViewController, imageIsVisible: Bool)
@@ -98,6 +99,7 @@ public final class ProjectPamphletContentViewController: UITableViewController {
     self.viewModel.outputs.goToRewardPledge
       .observeForControllerAction()
       .observeValues { [weak self] project, reward in
+        retentioneering.sendEvent(Event(name: "go_to_reward"))
         self?.goToRewardPledge(project: project, reward: reward)
     }
   }

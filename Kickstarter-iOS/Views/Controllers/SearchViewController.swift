@@ -2,6 +2,7 @@ import KsApi
 import Library
 import Prelude
 import UIKit
+import Retentioneering
 
 internal final class SearchViewController: UITableViewController {
   internal let viewModel: SearchViewModelType = SearchViewModel()
@@ -37,6 +38,9 @@ internal final class SearchViewController: UITableViewController {
 
   internal override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+
+    let event = Event(name: "search_screen")
+    retentioneering.sendEvent(event)
 
     self.cancelButton.addTarget(self,
                                 action: #selector(cancelButtonPressed),
@@ -158,6 +162,7 @@ internal final class SearchViewController: UITableViewController {
     self.viewModel.outputs.goToProject
       .observeForControllerAction()
       .observeValues { [weak self] project, projects, refTag in
+        retentioneering.sendEvent(Event(name: "go_to_project_from_search"))
         self?.goTo(project: project, projects: projects, refTag: refTag)
     }
 

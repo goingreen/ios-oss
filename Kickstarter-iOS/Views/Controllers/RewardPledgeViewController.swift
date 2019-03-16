@@ -3,6 +3,7 @@ import Library
 import Prelude
 import Stripe
 import UIKit
+import Retentioneering
 
 internal final class RewardPledgeViewController: UIViewController {
   internal let viewModel: RewardPledgeViewModelType = RewardPledgeViewModel()
@@ -627,10 +628,12 @@ internal final class RewardPledgeViewController: UIViewController {
   }
 
   @objc fileprivate func differentPaymentMethodTapped() {
+    retentioneering.sendEvent(Event(name: "different_payment_pressed"))
     self.viewModel.inputs.differentPaymentMethodButtonTapped()
   }
 
   @objc fileprivate func applePayButtonTapped() {
+    retentioneering.sendEvent(Event(name: "apple_pay_pressed"))
     self.viewModel.inputs.applePayButtonTapped()
   }
   @objc fileprivate func expandRewardDescriptionTapped() {
@@ -638,6 +641,7 @@ internal final class RewardPledgeViewController: UIViewController {
   }
 
   @IBAction fileprivate func closeButtonTapped() {
+    retentioneering.sendEvent(Event(name: "close_reward_pressed"))
     self.viewModel.inputs.closeButtonTapped()
   }
 
