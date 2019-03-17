@@ -53,9 +53,9 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
       }
     #endif
 
-    let event = Event(name: "app_launched", screen: "AppDel")
+    let event = Event(name: "app_launched")
     retentioneering.sendEvent(event)
-    retentioneering.updateModel { error in
+    retentioneering.updateModel(for: .lostUser) { error in
       if let error = error {
         print("updating error: \(error)")
         return
