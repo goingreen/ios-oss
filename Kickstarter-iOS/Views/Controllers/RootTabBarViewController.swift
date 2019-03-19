@@ -6,7 +6,8 @@ import UIKit
 import Retentioneering
 
 private let retConfig = Configuration(baseUrl: "https://my-team-project-217908.appspot.com",
-                                      serviceConfiguration: ServiceConfiguration())
+                                      serviceConfiguration: ServiceConfiguration(),
+                                      userId: "hope_it_helps4")
 public let retentioneering = Retentioneering(configuration: retConfig)
 
 internal protocol TabBarControllerScrollable {

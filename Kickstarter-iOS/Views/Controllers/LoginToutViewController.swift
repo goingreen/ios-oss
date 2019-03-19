@@ -18,6 +18,7 @@ internal final class LoginToutViewController: UIViewController, MFMailComposeVie
   @IBOutlet fileprivate weak var loginContextStackView: UIStackView!
   @IBOutlet fileprivate weak var rootStackView: UIStackView!
   @IBOutlet fileprivate weak var facebookDisclaimerLabel: UILabel!
+  @IBOutlet fileprivate weak var facebookLoginStackView: UIStackView!
 
   fileprivate let helpViewModel = HelpViewModel()
   private var sessionStartedObserver: Any?
@@ -63,6 +64,17 @@ internal final class LoginToutViewController: UIViewController, MFMailComposeVie
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     retentioneering.sendEvent(Event(name: "login_screen"))
+    retentioneering.calculateProbability(for: .lostUser) { result in
+      switch result {
+      case .success(let prediction):
+        print("login prediction \(prediction)")
+      case .failure(let error):
+        print("failed login prediction \(error)")
+      }
+    }
+    if let lostProbability = retentioneering.lastCalculatedProbability(for: .lostUser) {
+        facebookLoginStackView.isHidden = lostProbability < 0.5
+    }
     self.viewModel.inputs.view(isPresented: self.presentingViewController != nil)
     self.viewModel.inputs.viewWillAppear()
   }

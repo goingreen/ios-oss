@@ -53,20 +53,11 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
       }
     #endif
 
-    let event = Event(name: "app_launched")
-    retentioneering.sendEvent(event)
+    retentioneering.sendEvent(Event(name: "app_launched"))
     retentioneering.updateModel(for: .lostUser) { error in
       if let error = error {
         print("updating error: \(error)")
         return
-      }
-      retentioneering.calculateProbability(for: .lostUser) { result in
-        switch result {
-        case .success(let prediction):
-          print("lost user prediction!: \(prediction)")
-        case .failure(let error):
-          print("prediction error: \(error)")
-        }
       }
     }
 
