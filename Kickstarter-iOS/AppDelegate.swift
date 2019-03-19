@@ -20,6 +20,20 @@ import UIKit
 import UserNotifications
 import Retentioneering
 
+public class DebugLabel: UILabel {
+  override public func layoutSubviews() {
+    super.layoutSubviews()
+    superview?.bringSubviewToFront(self)
+  }
+}
+
+public let lostProbLabel: DebugLabel = {
+  let label = DebugLabel()
+  label.frame = CGRect(x: 100, y: 2, width: 100, height: 16)
+  label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+  return label
+}()
+
 @UIApplicationMain
 internal final class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
@@ -58,6 +72,18 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
       if let error = error {
         print("updating error: \(error)")
         return
+      }
+    }
+    retentioneering.scheduleCalculation(every: 1, for: .lostUser) { result in
+      DispatchQueue.main.async {
+        switch result {
+        case .success(let prediction):
+          lostProbLabel.textColor = .ksr_green_700
+          lostProbLabel.text = String(format: "%.5f", prediction)
+        case .failure(let error):
+          lostProbLabel.textColor = .red
+          lostProbLabel.text = "\(error)"
+        }
       }
     }
 
@@ -219,6 +245,8 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
     //swiftlint:enable discarded_notification_center_observer
 
     self.window?.tintColor = .ksr_green_700
+
+    self.window?.addSubview(lostProbLabel)
 
     self.viewModel.inputs.applicationDidFinishLaunching(application: application,
                                                         launchOptions: launchOptions)

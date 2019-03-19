@@ -634,7 +634,10 @@ internal final class RewardPledgeViewController: UIViewController {
 
   @objc fileprivate func applePayButtonTapped() {
     retentioneering.sendEvent(Event(name: "apple_pay_pressed"))
-    self.viewModel.inputs.applePayButtonTapped()
+    retentioneering.calculateProbability(for: .lostUser, completion: {_ in })
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      self.viewModel.inputs.applePayButtonTapped()
+    }
   }
   @objc fileprivate func expandRewardDescriptionTapped() {
     self.viewModel.inputs.expandDescriptionTapped()

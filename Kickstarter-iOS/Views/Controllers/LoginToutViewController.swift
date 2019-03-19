@@ -64,14 +64,6 @@ internal final class LoginToutViewController: UIViewController, MFMailComposeVie
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     retentioneering.sendEvent(Event(name: "login_screen"))
-    retentioneering.calculateProbability(for: .lostUser) { result in
-      switch result {
-      case .success(let prediction):
-        print("login prediction \(prediction)")
-      case .failure(let error):
-        print("failed login prediction \(error)")
-      }
-    }
     if let lostProbability = retentioneering.lastCalculatedProbability(for: .lostUser) {
         facebookLoginStackView.isHidden = lostProbability < 0.5
     }
